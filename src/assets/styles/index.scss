@@ -1,0 +1,72 @@
+@import './utilStyles';
+@import './form';
+@import './button';
+@import './productsList';
+@import './swiper';
+@import './accordion';
+@import './home';
+@import './selectedProduct.scss';
+@import './mobilebar.scss';
+@import './menubar.scss';
+@import './navbar.scss';
+
+body {
+  position: relative;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: Varela,sans-serif !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Varela,sans-serif !important;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  @media (max-width: 720px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.hovered-underline {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $dark;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+
+
+
