@@ -6,6 +6,7 @@
 @import './accordion';
 @import './home';
 @import './selectedProduct.scss';
+@import './shoppingCart.scss';
 @import './mobilebar.scss';
 @import './menubar.scss';
 @import './navbar.scss';
@@ -54,7 +55,7 @@ code {
     bottom: -3px;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background-color: $dark;
     transition: all 0.3s ease;
   }

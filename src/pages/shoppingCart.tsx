@@ -45,32 +45,32 @@ const ShoppingCart: FC = () => {
                 <div className="xs-12 sm-12 md-7"> 
                   <div className="d-flex fd-column" style={{gap: "80px"}}>
                     {cartItems.map((item: Product) => (
-                      <div className="d-flex jc-between ai-center f-wrap" key={item.id}>
+                      <div className="d-flex jc-between f-wrap shopping-products-layout" style={{gap: "50px"}} key={item.id}>
                         <div className="px-2 py-2" style={{ width: "250px" }}>
                           <img src={item.src} alt="shopping-cart-img" style={{ display: "block", height: "250px", objectFit: "contain" }} />
                         </div>
-                        <div className="px-2 py-2">
-                          <div className="d-flex fd-column" style={{ height: "100%", gap: "30px" }}>
-                            <div className="mb-2">
-                              <StyledTypography variant="body1" fontSize="16px" fontWeight="600" className="mb-2">
-                                {item.name}
-                              </StyledTypography>
-                              <StyledTypography variant="body1" fontSize="16px" fontWeight="500">
-                                <span className="mr-2">PRICE:</span><span style={{ marginRight: "2px" }}>$</span>{item.totalPrice}
-                              </StyledTypography>
-                            </div>
-                            <div className="d-flex f-wrap" style={{ gap: "10px" }}>
-                              <div className="shopping-btn">
-                                <Button svg={<FontAwesomeIcon icon={faPlus} />} bgColor="#484848" color="#fff" innerSpacing="9px" onClick={() => addProductHandler(item)} />
+                        <div className="px-2 py-2" style={{flex: "1"}}>
+                          <div style={{height: "100%"}}>
+                            <div className="d-flex jc-center fd-column" style={{ height: "100%", gap: "30px" }}>
+                              <div className="mb-2">
+                                <StyledTypography variant="body1" fontSize="16px" fontWeight="600" className="mb-2">
+                                  {item.name}
+                                </StyledTypography>
+                                <StyledTypography variant="body1" fontSize="16px" fontWeight="500">
+                                  <span className="mr-2">PRICE:</span><span style={{ marginRight: "2px" }}>$</span>{item.totalPrice}
+                                </StyledTypography>
                               </div>
-                              <StyledTypography variant="body1" fontSize="20px" fontWeight="600" color="rgba(0, 0, 0, 0.88)">
-                                {item.quantity}
-                              </StyledTypography>
-                              <div className="shopping-btn">
-                                <Button svg={<FontAwesomeIcon icon={faMinus} />} bgColor="#484848" color="#fff" innerSpacing="9px" onClick={() => decreaseProductHandler(item.id)} />
-                              </div>
-                              <div className="btn-content">
-                                <Button text="Remove from bag" fontSize="16px" bgColor="transparent" color="rgba(0, 0, 0, 0.88)" innerSpacing="8px" onClick={() => removeCartHandler(item.id)} />
+                              <div className="d-flex ai-center f-wrap" style={{ gap: "20px" }}>
+                                <div className="quantityHandle-content">
+                                  <Button svg={<FontAwesomeIcon icon={faPlus} />} bgColor="transparent" color="#000" innerSpacing="12px" onClick={() => addProductHandler(item)} />
+                                  <StyledTypography variant="body1" fontSize="20px" fontWeight="600" color="rgba(0, 0, 0, 0.88)">
+                                    {item.quantity}
+                                  </StyledTypography>
+                                  <Button svg={<FontAwesomeIcon icon={faMinus} />} bgColor="transparent" color="#000" innerSpacing="12px" onClick={() => decreaseProductHandler(item.id)} />
+                                </div>
+                                <div className="btn-content hovered-underline">
+                                  <Button text="Remove from cart" fontSize="16px" bgColor="transparent" innerSpacing="0" color="rgba(0, 0, 0, 0.88)" onClick={() => removeCartHandler(item.id)} />
+                                </div>
                               </div>
                             </div>
                           </div>

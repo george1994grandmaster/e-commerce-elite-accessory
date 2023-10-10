@@ -52,11 +52,9 @@ const productsSlice = createSlice({
       const newItem = { ...action.payload }; 
       const existingItemIndex = state.cartItems.findIndex(item => item.id === newItem.id);
       if (existingItemIndex !== -1 ) {
-        //if(state.cartItems[existingItemIndex].quantity < 10){
-          state.cartItems[existingItemIndex].quantity += 1;
-          state.translated = true;
-          state.cartItems[existingItemIndex].totalPrice += state.cartItems[existingItemIndex].price;
-        //}
+        state.cartItems[existingItemIndex].quantity += 1;
+        state.translated = true;
+        state.cartItems[existingItemIndex].totalPrice += state.cartItems[existingItemIndex].price;
       } else {
           newItem.quantity = newItem.quantity || 1; 
           newItem.totalPrice = newItem.price * newItem.quantity; 

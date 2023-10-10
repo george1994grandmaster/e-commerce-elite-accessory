@@ -1,3 +1,9 @@
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px $light inset !important;
+  background-color: $light !important; 
+}
+
 .MuiContainer-root {
   padding: 0 !important;
 }
@@ -5,8 +11,6 @@
 .MuiFormLabel-root {
   white-space: break-spaces !important;
 }
-
-
 
 .form-content {
   max-width: 800px !important;
@@ -39,10 +43,6 @@
   font-weight: 500;
   font-size: calc(15px + 0.1vw);
   line-height: 1.3; 
-}
-
-.form-typography-content {
-  margin-bottom: 40px;
 }
 
 .MuiCheckbox-root {

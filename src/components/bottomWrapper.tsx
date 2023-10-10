@@ -7,7 +7,6 @@ import { MainLogo, Visa, MasterCard, Ethereum, Instagram, Facebook, TikTok} from
 
 const BottomWrapper: FC = () => {
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const selectFormHandle = (formTypeValue: string) => {
@@ -21,10 +20,10 @@ const BottomWrapper: FC = () => {
           <div className="xs-12 sm-12 md-9 px-3">
             <div className="d-flex jc-between fd-column" style={{height: "100%"}}>
               <div className="mb-10">
-                <StyledTypography variant="h4" fontSize="30px" fontWeight="600" className="mb-4">
+                <StyledTypography variant="h4" color="rgba(0, 0, 0, 0.88)" fontSize="30px" fontWeight="600" className="mb-4">
                   Subscribe to the Newsletter
                 </StyledTypography>
-                <StyledTypography variant="body1" fontSize="14px" fontWeight="500" className="mb-4">
+                <StyledTypography variant="body1" color="rgba(0, 0, 0, 0.88)" fontSize="14px" fontWeight="500" className="mb-4">
                   Sign in & and receive news about all new Luxury items that has just dropped.
                 </StyledTypography>
                 <div className="btn-content">
@@ -110,7 +109,7 @@ const BottomWrapper: FC = () => {
                   </div>
                 </div>
                 <StyledTypography variant="h5" fontSize="14px" fontWeight="500" color="rgba(0, 0, 0, 0.88)" className="px-1 py-1">
-                  © 2023 Elite Accesory
+                  © 2023 Elite Accessory
                 </StyledTypography>
               </div>
             </div>

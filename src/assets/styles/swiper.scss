@@ -122,12 +122,6 @@
 
   a {
     padding: 15px 20px !important;
-    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.5);
-    transition: all 0.3s ease;
-
-    &:hover {
-      box-shadow: 0px 0px 12px rgba(128, 128, 128, 0.8);
-    }
   }
   
   img {

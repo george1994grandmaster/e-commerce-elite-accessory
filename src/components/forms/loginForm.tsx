@@ -6,7 +6,7 @@ import Button from '../button';
 const LoginForm: FC = () => {
   return (
     <Container>
-      <div className="form-typography-content">
+      <div className="mb-8">
         <StyledTypography variant="h5" fontSize="16px" fontWeight="600">
           Enter your login details
         </StyledTypography>

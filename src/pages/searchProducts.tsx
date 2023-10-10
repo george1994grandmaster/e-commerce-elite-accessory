@@ -2,6 +2,7 @@ import { FC, useEffect } from "react";
 import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectProducts, selectSearchedProduts, filterProductsByLetter } from '../store/productsSlice';
+import { StyledTypography } from '../components/material_Ui';
 import { Product } from '../types';
 
 const SearchProducts: FC = () => {
@@ -28,8 +29,14 @@ const SearchProducts: FC = () => {
                         <img src={product.src} alt="product" style={{display: "block"}}/>
                       </div>
                       <div className="card-body">
-                        <h3 style={{fontSize: "16px"}}>{product.name}</h3>
-                        <h3 style={{fontSize: "16px"}}>{product.price}</h3>
+                        <StyledTypography variant="body1" color="#000" fontSize="16px"  fontWeight="600" className="mb-2">
+                          {product.name}
+                        </StyledTypography>
+                        <StyledTypography variant="body1" color="rgba(0, 0, 0, 0.88)" fontSize="16px" fontWeight="600">
+                          <span className="mr-2">PRICE:</span>
+                          <span style={{marginRight: "2px"}}>$</span>
+                          {product.price}
+                        </StyledTypography>
                       </div>
                     </div>
                   </Link>

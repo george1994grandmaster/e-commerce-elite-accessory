@@ -58,3 +58,15 @@ button {
    //border-bottom: 2px solid $dark;
   }
 }
+
+.quantityHandle-content {
+  
+  button {
+    min-width: auto !important;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: $lighGrey;
+    }
+  }
+}

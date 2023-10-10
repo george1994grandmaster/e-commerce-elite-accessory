@@ -20,17 +20,17 @@ const RegisterForm: FC = () => {
             <StyledTypography className="mb-4" variant="body1" fontSize="14px" fontWeight="500">
               Customer Service
             </StyledTypography>
-            <StyledTypography className="mb-6" variant="h1" fontSize="30px" fontWeight="600">
+            <StyledTypography className="mb-6" color="rgba(0, 0, 0, 0.88)" variant="h1" fontSize="30px" fontWeight="600">
               Contact Us
             </StyledTypography>
-            <StyledTypography className="mb-10" variant="body1" fontSize="14px" fontWeight="500">
+            <StyledTypography className="mb-10" color="rgba(0, 0, 0, 0.88)" variant="body1" fontSize="14px" fontWeight="500">
               If you have any questions, send an email by filling out the contact form below, or call
             </StyledTypography>
             <div className="d-flex ai-center jc-between mb-8"> 
-              <StyledTypography variant="h3" fontSize="20px" fontWeight="600">
+              <StyledTypography variant="h3" color="rgba(0, 0, 0, 0.88)" fontSize="20px" fontWeight="600">
                 CONTACT DETAILS
               </StyledTypography>
-              <StyledTypography className="required-col" variant="body1" fontSize="14px" fontWeight="500">
+              <StyledTypography className="required-col" color="rgba(0, 0, 0, 0.88)" variant="body1" fontSize="14px" fontWeight="500">
                 Required fields
               </StyledTypography>
             </div>

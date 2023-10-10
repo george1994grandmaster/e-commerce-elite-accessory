@@ -1,14 +1,16 @@
 import  { FC, useEffect, useState } from "react";
+import { useLocation } from 'react-router-dom';
 import FormOptional from "../components/forms/formOptional";
 import MainBtn from "../components/button";
 
 const Form: FC = () => {
 
-  const [formType, setFormType] = useState<string>("")
+  const [formType, setFormType] = useState<string>("");
+  const location = useLocation();
   
   useEffect(() => {
     setFormType("log in")
-  },[]);
+  },[location]);
     
   
   const selectFormHandle = (formTypeValue: string) => {

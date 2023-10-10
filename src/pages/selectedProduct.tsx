@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, FC } from 'react';
+import { FC, useEffect, useState, useRef } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSlideIndex } from '../store/sliderSlice';
@@ -8,7 +8,7 @@ import { selectProducts, selectCartProducts, filterProductsById, addToCart, remo
 import { StyledTypography } from '../components/material_Ui';
 import Button  from '../components/button';
 import { Product } from '../types';
-import { CloseModal } from "../components/svgFormat"
+import { CloseModal, Success } from "../components/svgFormat"
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons';
@@ -20,11 +20,12 @@ const SelectProduct: FC = () => {
   const products = useSelector(selectProducts);
   const cartItems = useSelector(selectCartProducts);
   const dispatch = useDispatch();
+  const location = useLocation();
   const [isInCart, setIsInCart] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const successModal = useRef<HTMLInputElement>(null);
   
   useEffect(() => {
-    window.scrollTo(0, 0);
     if (productId) {
       dispatch(filterProductsById(parseInt(productId)));
       const checkIsInCart = cartItems.some((item: Product) => item.id === parseInt(productId));
@@ -35,11 +36,16 @@ const SelectProduct: FC = () => {
   
   useEffect(() => {
     dispatch(setSlideIndex(0));
-  },[dispatch]);
+    window.scrollTo(0, 0);
+  },[dispatch, location]);
 
 
   const addProductHandler = (product: Product) => {
     dispatch(addToCart(product));
+    successModal.current?.classList.add("show");
+    setTimeout(() => {
+      successModal.current?.classList.remove("show");
+    }, 2000); 
   }
 
   const removeCartHandler = (productId: number) => {
@@ -57,6 +63,16 @@ const SelectProduct: FC = () => {
   return (
     <>
       <div className="py-10" style={{backgroundColor: "rgb(242, 242, 242)"}}>
+        <div className="success-modal" ref={successModal}>
+          <div className="d-flex ai-center">
+            <div className="successIcon-content">
+              <Success/>
+            </div>
+            <StyledTypography color="#00381f" variant="body1" fontSize="16px" fontWeight="600">
+              Product has been added to the cart
+            </StyledTypography>
+          </div>
+        </div>
         <div className="container">
           {products && products[0] && (
             <>

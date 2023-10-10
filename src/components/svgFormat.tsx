@@ -2,7 +2,7 @@ import { FC } from "react";
 
 export const MainLogo: FC = () => {
   return (
-    <svg width="150" viewBox="0 0 309 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="200" viewBox="0 0 309 144" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.659 4.093H7.33201V12.712H21.255V16.027H7.33201V24.685H22.659V28H3.78301V0.778H22.659V4.093Z" fill="#00381F"/>
       <path d="M55.1341 24.451V28H37.2331V0.778H40.7821V24.451H55.1341Z" fill="#00381F"/>
       <path d="M71.8328 0.778V28H68.2838V0.778H71.8328Z" fill="#00381F"/>
@@ -100,7 +100,7 @@ export const SearchIcon: FC = () => {
 
 export const UserIcon: FC = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 17 17.819"><g id="User" transform="translate(0.5 0.5)"><path id="Path_21" data-name="Path 21" d="M22,28.36V26.406A3.954,3.954,0,0,0,18,22.5H10a3.954,3.954,0,0,0-4,3.906V28.36" transform="translate(-6 -11.541)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path><path id="Path_22" data-name="Path 22" d="M19.036,8.018A3.518,3.518,0,1,1,15.518,4.5a3.518,3.518,0,0,1,3.518,3.518Z" transform="translate(-7.518 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path></g></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 17 17.819"><g id="User" transform="translate(0.5 0.5)"><path id="Path_21" data-name="Path 21" d="M22,28.36V26.406A3.954,3.954,0,0,0,18,22.5H10a3.954,3.954,0,0,0-4,3.906V28.36" transform="translate(-6 -11.541)" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"></path><path id="Path_22" data-name="Path 22" d="M19.036,8.018A3.518,3.518,0,1,1,15.518,4.5a3.518,3.518,0,0,1,3.518,3.518Z" transform="translate(-7.518 -4.5)" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"></path></g></svg>
   )
 }
 
@@ -142,7 +142,7 @@ export const CloseModal: FC = () => {
 
 export const SidebarOpen: FC = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="21.403" height="17.105" viewBox="0 0 21.403 17.105"><g id="Group_124" data-name="Group 124" transform="translate(-14.194 -13.5)"><path id="Path_521" data-name="Path 521" d="M12.571,12.306h21.4" transform="translate(1.623 1.694)" fill="none" stroke="#00381f" stroke-width="1"></path><path id="Path_522" data-name="Path 522" d="M12.571,12.306h21.4" transform="translate(1.623 9.747)" fill="none" stroke="#00381f" stroke-width="1"></path><path id="Path_523" data-name="Path 523" d="M12.571,12.306h21.4" transform="translate(1.623 17.799)" fill="none" stroke="#00381f" stroke-width="1"></path></g></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="21.403" height="17.105" viewBox="0 0 21.403 17.105"><g id="Group_124" data-name="Group 124" transform="translate(-14.194 -13.5)"><path id="Path_521" data-name="Path 521" d="M12.571,12.306h21.4" transform="translate(1.623 1.694)" fill="none" stroke="#00381f" strokeWidth="1"></path><path id="Path_522" data-name="Path 522" d="M12.571,12.306h21.4" transform="translate(1.623 9.747)" fill="none" stroke="#00381f" strokeWidth="1"></path><path id="Path_523" data-name="Path 523" d="M12.571,12.306h21.4" transform="translate(1.623 17.799)" fill="none" stroke="#00381f" strokeWidth="1"></path></g></svg>
   )
 }
 
@@ -152,6 +152,11 @@ export const EmptyCart: FC = () => {
   )
 }
 
+export const Success: FC = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" fill="#fff"/></svg>
+  )
+}
 
 
 
