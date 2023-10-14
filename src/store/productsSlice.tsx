@@ -49,26 +49,37 @@ const productsSlice = createSlice({
     },
     addToCart: (state, action: PayloadAction<Product>) => {
       state.translated = false;
-      const newItem = { ...action.payload }; 
+      const newItem = { ...action.payload };
       const existingItemIndex = state.cartItems.findIndex(item => item.id === newItem.id);
-      if (existingItemIndex !== -1 ) {
+      const priceAsFloat = parseFloat(newItem.price.replace(/,/g, ''));
+
+      if (existingItemIndex !== -1) {
         state.cartItems[existingItemIndex].quantity += 1;
         state.translated = true;
-        state.cartItems[existingItemIndex].totalPrice += state.cartItems[existingItemIndex].price;
+        state.cartItems[existingItemIndex].totalPrice += priceAsFloat;
+        const formattedTotalPrice = state.cartItems[existingItemIndex].totalPrice.toLocaleString('en-US');
+        state.cartItems[existingItemIndex].totalPriceFormatted = formattedTotalPrice;
       } else {
-          newItem.quantity = newItem.quantity || 1; 
-          newItem.totalPrice = newItem.price * newItem.quantity; 
-          state.cartItems = [ newItem, ...state.cartItems ];
-        }
+          newItem.quantity = newItem.quantity || 1;
+          newItem.totalPrice = priceAsFloat * newItem.quantity;
+          const formattedTotalPrice = newItem.totalPrice.toLocaleString('en-US');
+          newItem.totalPriceFormatted = formattedTotalPrice;
+          state.cartItems = [newItem, ...state.cartItems];
+      }
     },
     decreaseFromCart: (state, action: PayloadAction<number>) => {
       state.translated = false;
-      const newItemId = action.payload; 
+      const newItemId = action.payload;
       const existingItemIndex = state.cartItems.findIndex(item => item.id === newItemId);
+      const priceAsFloat = parseFloat(state.cartItems[existingItemIndex].price.replace(/,/g, ''));
       if (existingItemIndex !== -1 && state.cartItems[existingItemIndex].quantity > 1) {
         state.cartItems[existingItemIndex].quantity -= 1;
         state.translated = true;
-        state.cartItems[existingItemIndex].totalPrice -= state.cartItems[existingItemIndex].price;
+        state.cartItems[existingItemIndex].totalPrice -= priceAsFloat;
+        const formattedTotalPrice = state.cartItems[existingItemIndex].totalPrice.toLocaleString('en-US');
+        state.cartItems[existingItemIndex].totalPriceFormatted = formattedTotalPrice;
+        //state.cartItems[existingItemIndex].totalPrice -= priceAsInt;
+        //console.log(5656)
       }
     },
     removeFromCart: (state, action: PayloadAction<number>) => {

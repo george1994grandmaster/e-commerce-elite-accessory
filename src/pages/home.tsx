@@ -7,6 +7,8 @@ import { StyledTypography } from '../components/material_Ui';
 import { Product } from '../types';
 import { MainBannerLogo } from '../components/svgFormat';
 import  SliderOptional  from '../components/sliders/sliderOptional';
+import { PresentContent, HomePageContent, Condition } from '../types';
+
 
 const Home: FC = () => {
   const allProducts = useSelector(selectAllProducts);

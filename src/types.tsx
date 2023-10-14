@@ -16,9 +16,10 @@ export interface ProductsState extends Condition {
 export interface Product {
   id: number;
   name: string;
-  price: number;
+  price: string;
   quantity: Partial<number>;
   totalPrice: Partial<number>;
+  totalPriceFormatted: Partial<string>;
   src: string;
   category: Partial<string>;
   description: Partial<string>;
@@ -37,8 +38,6 @@ export interface Form extends Condition {
 export interface ContentValue extends Condition {
   contentValue: string;
 }
-
-
 
 export interface SliderProps {
   sliderParams: Product[]

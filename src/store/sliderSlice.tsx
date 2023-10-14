@@ -6,7 +6,6 @@ const initialState: CurrentSlideIndex = {
   slideIndex: null
 };
 
-
 const sliderSlice = createSlice({
   name: 'slider',
   initialState,
@@ -14,7 +13,6 @@ const sliderSlice = createSlice({
     setSlideIndex: (state, action: PayloadAction<number | null>) => {
       const index = action.payload;
       state.slideIndex = index;
-      console.log(state.slideIndex);
     },
   },
 });

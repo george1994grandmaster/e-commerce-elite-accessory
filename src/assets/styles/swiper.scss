@@ -44,17 +44,11 @@
 }
 
 .navigation-swiper {
-  
-    img {
-      height: 400px;
-      object-fit: contain;
-    }
 
-    .swiper-button-prev {
-      top: auto !important;
-      bottom: 70% !important;
-    }
- 
+  img {
+    height: 400px;
+    object-fit: contain;
+  }
 }
 
 .products-swiper-container {

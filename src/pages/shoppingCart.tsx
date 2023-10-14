@@ -14,14 +14,17 @@ const ShoppingCart: FC = () => {
 
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartProducts);
-  const [totalProductPrice, setTotalProductPrice] = useState<number>(0);
+  const [totalProductPrice, setTotalProductPrice] = useState<string>();
   
   useEffect(() => {
     const totalProductPrice = cartItems.reduce((accumulator, currentItem) => {
       return accumulator + currentItem.totalPrice;
     }, 0);
-    setTotalProductPrice(totalProductPrice);
-  }, [cartItems]); 
+  
+    // Format the total product price with commas as thousands separators
+    const formattedTotalProductPrice = totalProductPrice.toLocaleString('en-US');
+    setTotalProductPrice(formattedTotalProductPrice);
+  }, [cartItems]);
   
   const removeCartHandler = (productId: number) => {
     dispatch(removeFromCart(productId));
@@ -57,7 +60,7 @@ const ShoppingCart: FC = () => {
                                   {item.name}
                                 </StyledTypography>
                                 <StyledTypography variant="body1" fontSize="16px" fontWeight="500">
-                                  <span className="mr-2">PRICE:</span><span style={{ marginRight: "2px" }}>$</span>{item.totalPrice}
+                                  <span className="mr-2">PRICE:</span><span style={{ marginRight: "2px" }}>$</span>{item.totalPriceFormatted}
                                 </StyledTypography>
                               </div>
                               <div className="d-flex ai-center f-wrap" style={{ gap: "20px" }}>
@@ -99,7 +102,7 @@ const ShoppingCart: FC = () => {
                     <StyledTypography variant="body1" fontSize="14px" fontWeight="500" color="rgba(0, 0, 0, 0.88)">
                       Sub Total: 
                     </StyledTypography>
-                    {totalProductPrice > 0 ? (
+                    {totalProductPrice ? (
                       <StyledTypography variant="body1" fontSize="14px" fontWeight="600" color="rgba(0, 0, 0, 0.88)">
                         <span style={{marginRight: "2px"}}>$</span>{totalProductPrice}
                       </StyledTypography>

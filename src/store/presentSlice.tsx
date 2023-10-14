@@ -6,7 +6,7 @@ import { HomePageContent } from '../types';
 
 
 const initialState: PresentContent = {
-  content: { src: '', title: '', text: '' }, // You provide the property names without values
+  content: { src: '', title: '', text: '' },
   loading: 'idle',
   error: null,
 };
@@ -28,15 +28,13 @@ const presentationSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchPresentContent.pending, (state) => {
-        // You can update loading state here if needed
       })
       .addCase(fetchPresentContent.fulfilled, (state, action: PayloadAction<HomePageContent>) => {
         state.loading = 'fulfilled';
         state.content = action.payload;
-        console.log(state.content)
       })
       .addCase(fetchPresentContent.rejected, (state) => {
-        // Handle rejection if needed
+       
       });
   },
 });

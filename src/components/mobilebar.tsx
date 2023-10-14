@@ -12,8 +12,7 @@ const MobileSidebar: FC = (/*{ sidebarCondition, closeSidebar }*/) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isMobilebarOpen: boolean = useSelector(selectMobilebarPosition);
-  console.log(isMobilebarOpen)
-
+  
   useEffect(() => {
     dispatch(setMobilebarPosition(false));
   }, [dispatch, location]);

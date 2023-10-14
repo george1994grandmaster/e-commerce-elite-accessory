@@ -12,13 +12,11 @@ const Form: FC = () => {
     setFormType("log in")
   },[location]);
     
-  
   const selectFormHandle = (formTypeValue: string) => {
     setFormType (formTypeValue)
   };
 
   return (
-    
     <>
       <div className="py-10" style={{backgroundColor: "rgb(242, 242, 242)"}}>
         <div className="container">

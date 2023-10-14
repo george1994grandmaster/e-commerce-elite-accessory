@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterProductsByCategories, selectProducts } from '../store/productsSlice';
 import { StyledTypography } from '../components/material_Ui';
@@ -8,13 +8,13 @@ import { Product } from '../types';
 const Categories: FC = () => {
 
   const { productCategory } = useParams<{ productCategory: string }>();
-  console.log(productCategory)
   const dispatch = useDispatch();
   const categoryProducts = useSelector(selectProducts);
+  const location = useLocation();
 
   useEffect(() => {
     dispatch(filterProductsByCategories(productCategory as string));
-  }, [dispatch, productCategory]);
+  }, [dispatch, productCategory, location]);
 
   /*const filteredProducts = allProducts.filter(
     (product) => product.category === productCategory
