@@ -33,6 +33,7 @@ const Header: FC = () => {
       <MobileNavbar/>
       <div className="navbar-wrapper desktop-navbar-wrapper">
         <div className="d-flex">
+          <div className="largeScreen-visible-border" style={{width: "1px", height: "50px", backgroundColor: "rgb(0, 56, 31)"}}></div>
           <div className="col-1">
             <Button text={"Shop"} color="rgba(0, 0, 0, 0.88)" onClick={openMenubar}/>
           </div>
@@ -56,9 +57,10 @@ const Header: FC = () => {
           <div className="col-1">
             <div className="d-flex ai-center mx-auto p-relative " style={{height: "100%", maxWidth: "75px"}}>
               <Button svg={<CartIcon/>} height="100%" onClick={() => handleNavigate("shopping-cart")}/>
-            <Cart/>
+              <Cart/>
             </div>
           </div>
+          <div className="largeScreen-visible-border" style={{width: "1px", height: "50px", backgroundColor: "rgb(0, 56, 31)"}}></div>
         </div>
       </div>
       <div className="navbar-wrapper mobile-navbar-wrapper">

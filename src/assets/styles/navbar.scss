@@ -8,6 +8,8 @@
 
   &.desktop-navbar-wrapper {
     display: block;
+    max-width: 2600px;
+    margin: 0 auto;
 
     @media (max-width: 992px) {
       display: none;
@@ -63,6 +65,14 @@
         }
       }
     }
+  }
+}
+
+.largeScreen-visible-border {
+  display: none;
+
+  @media (min-width: 2600px) {
+    display: block;
   }
 }
 
