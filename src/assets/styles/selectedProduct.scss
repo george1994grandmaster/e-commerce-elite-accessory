@@ -31,9 +31,9 @@
 
 .open-modal {
   position: absolute;
-  top: 0;
+  bottom: 100%;
   right: 0;
-  z-index: 1;
+  z-index: 4;
 }
 
 .success-modal {
@@ -63,3 +63,4 @@
   border-radius: 5px;
   margin-right: 15px;
 }
+

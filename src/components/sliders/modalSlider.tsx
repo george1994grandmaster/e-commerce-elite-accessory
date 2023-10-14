@@ -11,15 +11,16 @@ import { ModalArrowLeft, ModalArrowRight } from "../svgFormat"
 SwiperCore.use([Navigation]);
 
  const ModalSlider: FC<SliderProps> = ({sliderParams}) => {
- const swiperRef = useRef<SwiperCore | null>(null);
-  const location = useLocation();
 
-useEffect(() => {
-  if ( swiperRef.current) {
-    swiperRef.current.slideTo(0); 
-  }
-}, [location]);
+  const swiperRef = useRef<SwiperCore | null>(null);
+  const location = useLocation();
  
+  useEffect(() => {
+    if ( swiperRef.current) {
+      swiperRef.current.slideTo(0); 
+    }
+  }, [location]);
+
   return (
     <>
       <Swiper 
@@ -30,7 +31,6 @@ useEffect(() => {
         }}
         
         slidesPerView={1}
-        //spaceBetween={40}
         grabCursor={true}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;

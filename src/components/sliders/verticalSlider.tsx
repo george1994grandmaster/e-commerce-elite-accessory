@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSlideIndex, selectSlideIndex } from '../../store/sliderSlice';
 import { SliderProps } from "../../types";
@@ -16,17 +16,12 @@ const VerticalSlider: FC<SliderProps> = ({sliderParams}) => {
   const dispatch = useDispatch();
   const swiperRef = useRef<SwiperCore | null>(null);
 
-  /*useEffect(() => {
-    dispatch(setSlideIndex(0))
-  },[dispatch]);*/
-
   useEffect(() => {
     if (swiperRef.current) {
       swiperRef.current.slideTo(slideIndex);
     }
   }, [slideIndex]);
 
-  
   const handleSlideClick = (index: number) => {
     if(swiperRef.current) {
       const slideIndex = index; 
@@ -45,10 +40,9 @@ const VerticalSlider: FC<SliderProps> = ({sliderParams}) => {
         slidesPerView={4}
         direction={'vertical'}
         spaceBetween={40}
-        //centeredSlides={true} // Center the active slide
         
         onSwiper={(swiper) => {
-          swiperRef.current = swiper; // Store the Swiper instance in the ref
+          swiperRef.current = swiper; 
         }}
        >
         {sliderParams.map((item, index) => (

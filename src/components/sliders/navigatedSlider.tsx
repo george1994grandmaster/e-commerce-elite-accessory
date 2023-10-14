@@ -7,7 +7,6 @@ import SwiperCore from 'swiper';
 import  { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { NavigateArrowLeft, NavigateArrowRight } from '../svgFormat';
 
 SwiperCore.use([Navigation]);
 
@@ -15,7 +14,7 @@ const NavigatedSlider: FC<SliderProps> = ({sliderParams}) => {
   const dispatch = useDispatch();
   const slideIndex = useSelector(selectSlideIndex) as number ;
   const swiperRef = useRef<SwiperCore | null>(null);
-
+  
   useEffect(() => {
     if (swiperRef.current) {
       swiperRef.current.slideTo(slideIndex);
@@ -40,10 +39,6 @@ const NavigatedSlider: FC<SliderProps> = ({sliderParams}) => {
     <>
       <Swiper 
         className="swiper navigation-swiper"
-        navigation={{
-          prevEl: '.swiper-button-prev',
-          nextEl: '.swiper-button-next',
-        }}
         slidesPerView={1}
         spaceBetween={40}
         grabCursor={true}

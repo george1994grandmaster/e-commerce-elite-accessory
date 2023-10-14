@@ -14,12 +14,12 @@ const RegisterForm: FC = () => {
 
   return (
     <Container>
-      <div className="d-flex jc-between ai-center mb-8">
-        <StyledTypography variant="h5" fontSize="16px" fontWeight="600">
-          Enter your registration details
+      <div className="d-flex ai-center f-wrap jc-between mb-8" style={{gap: "10px"}}> 
+        <StyledTypography variant="h3" color="rgba(0, 0, 0, 0.88)" fontSize="20px" fontWeight="600" style={{paddingRight: "15px"}}>
+          Enter yout registration details
         </StyledTypography>
         <StyledTypography className="required-col" color="rgba(0, 0, 0, 0.88)" variant="body1" fontSize="14px" fontWeight="500">
-            Required fields
+          Required fields
         </StyledTypography>
       </div>
       <form>

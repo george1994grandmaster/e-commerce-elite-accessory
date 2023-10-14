@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react';
+import { FC } from 'react';
 import { SliderProps } from "../../types";
 import VerticalSlider from "./verticalSlider";
 import NavigatedSlider from "./navigatedSlider";

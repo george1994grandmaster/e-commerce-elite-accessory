@@ -12,6 +12,7 @@ import { ProductListArrowLeft, ProductListArrowRight } from '../svgFormat';
 SwiperCore.use([Navigation]);
 
 const NavigatedSlider: FC<SliderProps> = ({sliderParams}) => {
+  
  const swiperRef = useRef<SwiperCore | null>(null);
 
   return (
@@ -22,9 +23,7 @@ const NavigatedSlider: FC<SliderProps> = ({sliderParams}) => {
           prevEl: '.swiper-button-prev',
           nextEl: '.swiper-button-next',
         }}
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
+        
         breakpoints={{
         720: {
             slidesPerView: 2,
@@ -35,6 +34,9 @@ const NavigatedSlider: FC<SliderProps> = ({sliderParams}) => {
         1200: {
           slidesPerView: 4,
         },
+        }}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
         }}
       >
         {sliderParams && sliderParams.slice(10, 20).map((sliderParam, index) => (
