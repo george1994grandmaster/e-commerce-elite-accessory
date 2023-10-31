@@ -19,6 +19,25 @@ const Home: FC = () => {
     dispatch(fetchPresentContent() as any);
   }, [dispatch]);
 
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('https://george1994grandmaster.github.io/postman-test/test.json');
+        if (response.status === 200) {
+          const jsonData = await response.json();
+          console.log(jsonData)
+           // Assuming the "employees" array contains the data
+        } else {
+          throw new Error('Failed to fetch data');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchData(); // Call the fetchData function when the component mounts
+  }, []);
+
   return (
     <>
       <div className="banner-wrapper">
